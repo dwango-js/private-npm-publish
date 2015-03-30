@@ -1,0 +1,33 @@
+{
+  "name": "private-npm-publish",
+  "version": "1.0.0",
+  "description": "prevent accidentally npm published commandline tool.",
+  "main": "lib/private-npm-publish.js",
+  "bin": {
+    "private-npm-publish": "./bin/cmd.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "babel src --out-dir lib --source-maps-inline",
+    "watch": "babel src --out-dir lib --watch --source-maps-inline",
+    "test": "npm run build && mocha"
+  },
+  "keywords": [
+    "npm",
+    "private",
+    "intranet",
+    "enterprise"
+  ],
+  "author": "azu",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^4.7.16"
+  },
+  "dependencies": {
+    "bluebird": "^2.9.14",
+    "npm": "^2.x",
+    "optionator": "^0.5.0",
+  }
+}
