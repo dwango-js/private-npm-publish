@@ -23,11 +23,15 @@
   "author": "azu",
   "license": "MIT",
   "devDependencies": {
-    "babel": "^4.7.16"
+    "babel": "^4.7.16",
+    "espower-loader": "^0.10.0",
+    "intelli-espower-loader": "^0.6.0",
+    "mocha": "^2.2.1",
+    "power-assert": "^0.10.2"
   },
   "dependencies": {
     "bluebird": "^2.9.14",
-    "npm": "^2.x",
-    "optionator": "^0.5.0",
+    "npm": "^2.0",
+    "optionator": "^0.5.0"
   }
 }

@@ -1,6 +1,6 @@
 // LICENSE : MIT
 "use strict";
 module.exports = {
-    checker: require("./check-private"),
-    npmRun: require("./cli/npm-run")
+    checker: require("./checker"),
+    npmRun: require("./npm-run")
 };

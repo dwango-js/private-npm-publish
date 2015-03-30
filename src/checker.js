@@ -4,22 +4,23 @@ var assert = require("assert");
 /**
  * validate pkg object if scoped module or not.
  * @param {object} pkg
- * @return {Error|null} if found error, then return Error.
+ * @return {Error[]} if found errors, then return Error**s**.
  */
 function validateScopedPackage(pkg) {
     assert(pkg, "package.json is not found");
+    var errors = [];
     var name = pkg.name;
     if (name == null || name.length == 0) {
-        return new Error("package name is not defined");
+        errors.push(new Error("package name is not defined"));
     }
     // validate - start with `@`
     var scopedModuleNameRegExp = /^@/;
     if (!scopedModuleNameRegExp.test(name)) {
-        return new Error(`package name have to start with "@": ${name}
-Scoped packages : https://docs.npmjs.com/misc/scope`);
+        errors.push(new Error(`package name have to start with "@": ${name}
+More info about scoped packages : https://docs.npmjs.com/misc/scope`));
     }
-    // this `pkg` is scoped module!
-    return null;
+    // if `errors.length === 0` is valid scoped module!
+    return errors;
 }
 
 module.exports = {

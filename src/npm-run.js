@@ -22,11 +22,11 @@ function loadNpmAsync() {
  * execute npm <command>
  * the command is like "publish".
  * @param {string} command the command is like "install"
- * @param {string[]} argv
+ * @param {string[]} argv te
  * http://nodejs.jp/nodejs.org_ja/api/child_process.html#child_process_child_process_spawn_command_args_options
  * @return {Promise}
  */
-function npmRun(command, argv = []) {
+function npmRunAsync(command, argv = []) {
     return loadNpmAsync().then(function () {
         return new Promise((resolve, reject)=> {
             npm.commands[command](argv, function (er, data) {
@@ -42,5 +42,5 @@ function npmRun(command, argv = []) {
     });
 }
 module.exports = {
-    npmRun
+    npmRunAsync
 };

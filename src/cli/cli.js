@@ -1,16 +1,16 @@
 // LICENSE : MIT
 "use strict";
 var options = require("./options");
-var npmRun = require("../npm-run").npmRun;
+var npmRunAsync = require("../npm-run").npmRunAsync;
 var Promise = require("bluebird");
-var checker = require("../check-private");
+var checker = require("../checker");
 var path = require("path");
 var fs = require("fs");
 var cli = {
     /**
      * Executes the CLI based on an array of arguments that is passed in.
      * @param {string|Array|Object} args The arguments to process.
-     * @returns {Promise} The exit code for the operation.
+     * @returns {Promise} The promise for the operation.
      */
     executeAsync: function (args) {
         return new Promise(function (resolve, reject) {
@@ -24,13 +24,12 @@ var cli = {
             }
             var packageJSONPath = path.join(process.cwd(), "package.json");
             var pkg = JSON.parse(fs.readFileSync(packageJSONPath));
-            var error = checker.validateScopedPackage(pkg);
+            var errors = checker.validateScopedPackage(pkg);
             // not found error -> npm publish
-            if (error) {
-                reject(error);
-                return;
+            if (errors.length > 0) {
+                return reject(errors.join("\n"));
             }
-            return npmRun("publish", []);
+            return npmRunAsync("ls", []);
         });
     }
 };
