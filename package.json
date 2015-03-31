@@ -7,7 +7,8 @@
     "private-npm-publish": "./bin/cmd.js"
   },
   "files": [
-    "lib"
+    "lib",
+    "bin"
   ],
   "scripts": {
     "build": "babel src --out-dir lib --source-maps-inline",
