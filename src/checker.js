@@ -17,6 +17,7 @@ function validateScopedPackage(pkg) {
     var scopedModuleNameRegExp = /^@/;
     if (!scopedModuleNameRegExp.test(name)) {
         errors.push(new Error(`The package name has to start with "@": ${name}
+e.g.) @myorg/mypackage
 More info about scoped packages : https://docs.npmjs.com/misc/scope`));
     }
     // if `errors.length === 0` is valid scoped module!

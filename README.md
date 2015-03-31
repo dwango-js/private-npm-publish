@@ -1,11 +1,13 @@
 # private-npm-publish
 
-a command line tool to prevent accidental npm publish.
+A command line tool to prevent accidental `npm publish` for [scoped packages](https://docs.npmjs.com/misc/scope "Scoped packages").
 
 This command is wrapper of `npm publish`.
 
-- Check valid private module?
-- Run `npm publish`
+Just a simple tool: 
+
+1. Check the validity of scoped packages?
+2. Run `npm publish` => to your private registry!
 
 ## Installation
 
@@ -14,12 +16,31 @@ This command is wrapper of `npm publish`.
 ## Usage
 
     $ private-npm-publish
-    # is the same `npm publish`
-
+    # == Check the package and `npm publish`
 
 ## Tests
 
-- [ ] Write How to Tests
+    # npm test
+
+## FAQ
+
+### Why wrapper command?
+   
+npm command doesn't provide global hook for `npm publish`.   
+
+### I don't know what to do.
+
+Workflow: Create npm package -> publish private.
+
+```sh
+# the safety way for creating scoped packages
+npm login —registry=http://example.com —scope=myorg
+npm config set @myorg:registry: http://example.com
+npm init mypackage —scope=myorg
+# the safety way for publishing scoped packages
+npm install -g private-npm-publish
+private-npm-publish
+```
 
 ## Contributing
 
