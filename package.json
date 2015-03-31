@@ -1,6 +1,6 @@
 {
   "name": "private-npm-publish",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "prevent accidentally npm published commandline tool.",
   "main": "lib/private-npm-publish.js",
   "bin": {
