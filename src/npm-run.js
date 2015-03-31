@@ -29,9 +29,9 @@ function loadNpmAsync() {
 function npmRunAsync(command, argv = []) {
     return loadNpmAsync().then(function () {
         return new Promise((resolve, reject)=> {
-            npm.commands[command](argv, function (er, data) {
-                if (er) {
-                    reject(er);
+            npm.commands[command](argv, function (error, data) {
+                if (error) {
+                    return reject(error);
                 }
                 resolve(data);
             });
@@ -42,5 +42,6 @@ function npmRunAsync(command, argv = []) {
     });
 }
 module.exports = {
+    loadNpmAsync,
     npmRunAsync
 };
