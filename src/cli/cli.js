@@ -29,7 +29,7 @@ var cli = {
             if (errors.length > 0) {
                 return reject(errors.join("\n"));
             }
-            return npmRunAsync("ls", []);
+            return npmRunAsync("publish", []);
         });
     }
 };
