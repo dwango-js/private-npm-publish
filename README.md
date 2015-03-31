@@ -20,7 +20,7 @@ Just a simple tool:
 
 ## Tests
 
-    # npm test
+    $ npm test
 
 ## FAQ
 
