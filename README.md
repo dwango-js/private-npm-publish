@@ -34,7 +34,7 @@ Workflow: Create npm package -> publish private.
 
 ```sh
 # the safety way for creating scoped packages
-npm login —registry=http://example.com —scope=myorg
+npm login —registry=http://example.com —scope=@myorg
 npm config set @myorg:registry: http://example.com
 npm init mypackage —scope=myorg
 # the safety way for publishing scoped packages
