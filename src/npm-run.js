@@ -3,6 +3,7 @@
 var which = require("which");
 var Promise = require("bluebird");
 var npm = require("npm");
+var debug = require("debug")("npm-run");
 /**
  * load `npm` config
  * @returns {Promise} the promise was filled when have finished load npm config.
@@ -36,7 +37,7 @@ function npmRunAsync(command, argv = []) {
                 resolve(data);
             });
             npm.registry.log.on("log", function (message) {
-                console.log(message);
+                debug(message);
             });
         });
     });
