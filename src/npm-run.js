@@ -5,7 +5,7 @@ var Promise = require("bluebird");
 var npm = require("npm");
 /**
  * load `npm` config
- * @returns {*}
+ * @returns {Promise} the promise was filled when have finished load npm config.
  */
 function loadNpmAsync() {
     return new Promise((resolve, reject)=> {
