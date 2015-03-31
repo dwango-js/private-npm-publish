@@ -1,4 +1,4 @@
-# private-npm-publish
+# private-npm-publish [![Build Status](https://travis-ci.org/dwango-js/private-npm-publish.svg)](https://travis-ci.org/dwango-js/private-npm-publish)
 
 A command line tool to prevent accidental `npm publish` for [scoped packages](https://docs.npmjs.com/misc/scope "Scoped packages").
 
