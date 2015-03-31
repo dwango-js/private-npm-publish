@@ -34,5 +34,17 @@
     "bluebird": "^2.9.14",
     "npm": "^2.0",
     "optionator": "^0.5.0"
-  }
+  },
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dwango-js/private-npm-publish.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dwango-js/private-npm-publish/issues"
+  },
+  "homepage": "https://github.com/dwango-js/private-npm-publish"
 }
