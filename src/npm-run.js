@@ -1,6 +1,5 @@
 // LICENSE : MIT
 "use strict";
-var which = require("which");
 var Promise = require("bluebird");
 var npm = require("npm");
 var debug = require("debug")("npm-run");
