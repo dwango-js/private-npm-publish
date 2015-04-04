@@ -1,6 +1,6 @@
 // LICENSE : MIT
 "use strict";
 module.exports = {
-    checker: require("./checker"),
+    checker: require("scoped-modules-checker"),
     npmRun: require("./npm-run")
 };

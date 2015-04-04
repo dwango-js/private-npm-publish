@@ -28,6 +28,10 @@ Just a simple tool:
    
 npm command doesn't provide global hook for `npm publish`.   
 
+### Logic of checker?
+
+private-npm-publish use [scoped-modules-checker](https://github.com/azu/scoped-modules-checker "scoped-modules-checker") module.
+
 ### I don't know what to do.
 
 Workflow: Create npm package -> publish private.
